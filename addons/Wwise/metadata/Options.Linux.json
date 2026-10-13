@@ -1,0 +1,55 @@
+{
+	"Version": 1,
+	"Namespaces": [
+		{
+			"Name": "Linux",
+			"DisplayName": "Linux",
+			"Doc": "Runtime options specific to desktop Linux.",
+			"ConditionalMacro": "AK_LINUX_DESKTOP",
+			"KeyStart": 4352,
+			"NumOptions": 3,
+			"Visibility": "Advanced",
+			"Options": [
+				{
+					"Name": "EnablePulseAudio",
+					"DisplayName": "Enable Pulse Audio",
+					"Visibility": "Advanced",
+					"Type": "Boolean",
+					"Doc": "Allow using the PulseAudio API when it is installed in the operating environment.\n\nWhen both PulseAudio and ALSA are enabled and available, PulseAudio is always chosen over ALSA.",
+					"DefaultValue": true,
+					"Key": 4352
+				},
+				{
+					"Name": "EnableALSA",
+					"DisplayName": "EnableALSA",
+					"Visibility": "Advanced",
+					"Type": "Boolean",
+					"Doc": "Allow using the ALSA API when it is installed in the operating environment.\n\nWhen both PulseAudio and ALSA are enabled and available, PulseAudio is always chosen over ALSA.",
+					"DefaultValue": true,
+					"Key": 4353
+				},
+				{
+					"Name": "AudioOutputFormat",
+					"DisplayName": "Audio Output Format",
+					"Visibility": "Advanced",
+					"Type": "String",
+					"Doc": "Audio format that is sent out to the system.\n\nThis is supported by PulseAudio only.",
+					"DefaultValue": "Float32",
+					"AllowedValues": [
+						{
+							"Value": "Int16",
+							"DisplayName": "Int16",
+							"Doc": "16-bit signed integer format."
+						},
+						{
+							"Value": "Float32",
+							"DisplayName": "Float32",
+							"Doc": "32-bit floating point format."
+						}
+					],
+					"Key": 4354
+				}
+			]
+		}
+	]
+}

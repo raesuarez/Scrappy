@@ -14,6 +14,10 @@ config/name="Scrappy"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+WwiseRuntimeManager="*uid://ixf2tm3c0w2s"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
@@ -26,3 +30,9 @@ version_control/autoload_on_startup=true
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[wwise]
+
+output/panning_rule.android="Headphones"
+output/panning_rule.ios="Headphones"
+output/enable_auto_panning_rule.ios=true

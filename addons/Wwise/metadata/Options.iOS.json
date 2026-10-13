@@ -1,0 +1,224 @@
+{
+	"Version": 1,
+	"Namespaces": [
+		{
+			"Name": "Output",
+			"DisplayName": "Output",
+			"Doc": "Options that configure the behavior of the primary audio output device.",
+			"KeyStart": 2816,
+			"NumOptions": 2,
+			"Visibility": "Default",
+			"Options": [
+				{
+					"Name": "PanningRule",
+					"DisplayName": "Panning Rule",
+					"Visibility": "Default",
+					"DefaultValue": "Headphones",
+					"Key": 2818
+				},
+				{
+					"Name": "EnableAutoPanningRule",
+					"DisplayName": "Enable Auto Panning Rule",
+					"Visibility": "Default",
+					"DefaultValue": true,
+					"Key": 2819
+				}
+			]
+		},
+		{
+			"Name": "iOS",
+			"DisplayName": "iOS",
+			"Doc": "Runtime options specific to the iOS family of platforms (iOS, tvOS, visionOS).",
+			"ConditionalMacro": "AK_IOS",
+			"KeyStart": 4352,
+			"NumOptions": 12,
+			"Visibility": "Default",
+			"Options": [
+				{
+					"Name": "EnableAVAudioEngine",
+					"DisplayName": "Enable AVAudioEngine",
+					"Visibility": "Advanced",
+					"Type": "Boolean",
+					"Doc": "Allow using AVAudioEngine API when the operating system supports it (iOS/tvOS 13 and above).\n\nWhen AVAudioEngine is enabled and available, 3D Audio can be used on iOS/tvOS via Apple Spatial Audio technology.\n\nFor visionOS, AVAudioEngine is always enabled and 3D Audio is always available.",
+					"DefaultValue": true,
+					"Key": 4352
+				},
+				{
+					"Name": "AudioSession_Category",
+					"DisplayName": "Audio Session Category",
+					"Visibility": "Default",
+					"Type": "String",
+					"Doc": "Determines app-level audio behaviours such as inter-app audio mixing policies and audio routing behaviours.\n\nThese values are funtionally equivalent to the corresponding constants defined by the iOS audio session service backend (AVAudioSession). See Xcode documentation for details on the audio session categories.",
+					"DefaultValue": "SoloAmbient",
+					"AllowedValues": [
+						{
+							"Value": "Ambient",
+							"DisplayName": "Ambient",
+							"Doc": "Corresponds to the AVAudioSessionCategoryAmbient constant."
+						},
+						{
+							"Value": "SoloAmbient",
+							"DisplayName": "Solo Ambient",
+							"Doc": "Corresponds to the AVAudioSessionCategorySoloAmbient constant."
+						},
+						{
+							"Value": "PlayAndRecord",
+							"DisplayName": "Play And Record",
+							"Doc": "Corresponds to the AVAudioSessionCategoryPlayAndRecord constant."
+						},
+						{
+							"Value": "Playback",
+							"DisplayName": "Playback",
+							"Doc": "Corresponds to the AVAudioSessionCategoryPlayback constant."
+						}
+					],
+					"Key": 4353
+				},
+				{
+					"Name": "AudioSession_MixWithOthers",
+					"DisplayName": "Audio Session: Mix With Others",
+					"Visibility": "Default",
+					"Type": "Boolean",
+					"Doc": "Corresponds to AVAudioSessionCategoryOptionMixWithOthers.\n\nOnly affects PlayAndRecord and Playback categories.",
+					"DefaultValue": false,
+					"Key": 4354
+				},
+				{
+					"Name": "AudioSession_DuckOthers",
+					"DisplayName": "Audio Session: Duck Others",
+					"Visibility": "Default",
+					"Type": "Boolean",
+					"Doc": "Corresponds to AVAudioSessionCategoryOptionDuckOthers.\n\nImplicitely sets the MixWithOthers option. Only affects PlayAndRecord and Playback categories.",
+					"DefaultValue": false,
+					"Key": 4355
+				},
+				{
+					"Name": "AudioSession_AllowBluetooth",
+					"DisplayName": "Audio Session: Allow Bluetooth",
+					"Visibility": "Advanced",
+					"Type": "Boolean",
+					"Doc": "Corresponds to AVAudioSessionCategoryOptionAllowBluetooth.\n\nOnly affects PlayAndRecord category.",
+					"DefaultValue": false,
+					"Key": 4356
+				},
+				{
+					"Name": "AudioSession_DefaultToSpeaker",
+					"DisplayName": "Audio Session: Default to Speaker",
+					"Visibility": "Advanced",
+					"Type": "Boolean",
+					"Doc": "Corresponds to AVAudioSessionCategoryOptionDefaultToSpeaker.\n\nOnly affects PlayAndRecord category.",
+					"DefaultValue": false,
+					"Key": 4357
+				},
+				{
+					"Name": "AudioSession_AllowBluetoothA2DP",
+					"DisplayName": "Audio Session: Bluetooth A2DP",
+					"Visibility": "Advanced",
+					"Type": "Boolean",
+					"Doc": "Corresponds to AVAudioSessionCategoryOptionAllowBluetoothA2DP.\n\nOnly affects PlayAndRecord category.",
+					"DefaultValue": false,
+					"Key": 4358
+				},
+				{
+					"Name": "AudioSession_Mode",
+					"DisplayName": "Audio Session Mode",
+					"Visibility": "Default",
+					"Type": "String",
+					"Doc": "Determines the specialized behavior of the chosen audio session category.\n\nThese IDs are functionally equivalent to the corresponding constants defined by the iOS audio session service backend (AVAudioSession). See Xcode documentation for details on the audio session modes.",
+					"DefaultValue": "Default",
+					"AllowedValues": [
+						{
+							"Value": "Default",
+							"DisplayName": "Default",
+							"Doc": "Corresponds to the AVAudioSessionModeDefault constant."
+						},
+						{
+							"Value": "VoiceChat",
+							"DisplayName": "Voice Chat",
+							"Doc": "Corresponds to the AVAudioSessionModeVoiceChat constant."
+						},
+						{
+							"Value": "GameChat",
+							"DisplayName": "Game Chat",
+							"Doc": "Corresponds to the AVAudioSessionModeGameChat constant."
+						},
+						{
+							"Value": "VideoRecording",
+							"DisplayName": "Video Recording",
+							"Doc": "Corresponds to the AVAudioSessionModeVideoRecording constant."
+						},
+						{
+							"Value": "Measurement",
+							"DisplayName": "Measurement",
+							"Doc": "Corresponds to the AVAudioSessionModeMeasurement constant."
+						},
+						{
+							"Value": "MoviePlayback",
+							"DisplayName": "Movie Playback",
+							"Doc": "Corresponds to the AVAudioSessionModeMoviePlayback constant."
+						},
+						{
+							"Value": "VideoChat",
+							"DisplayName": "Video Chat",
+							"Doc": "Corresponds to the AVAudioSessionModeVideoChat constant."
+						}
+					],
+					"Key": 4359
+				},
+				{
+					"Name": "AudioSession_RouteSharingPolicy",
+					"DisplayName": "Audio Session: Route Sharing Policy",
+					"Visibility": "Advanced",
+					"Type": "String",
+					"Doc": "Determines whether audio should be routed to somewhere other than the default system output.\n\nThe route-sharing policy only applies to the Playback audio session category.",
+					"DefaultValue": "Default",
+					"AllowedValues": [
+						{
+							"Value": "Default",
+							"DisplayName": "Default",
+							"Doc": "Corresponds to the AVAudioSessionRouteSharingPolicyDefault constant."
+						},
+						{
+							"Value": "LongFormAudio",
+							"DisplayName": "Long Form Audio",
+							"Doc": "Corresponds to the AVAudioSessionRouteSharingPolicyLongFormAudio constant."
+						},
+						{
+							"Value": "LongFormVideo",
+							"DisplayName": "Long Form Video",
+							"Doc": "Corresponds to the AVAudioSessionRouteSharingPolicyLongFormVideo constant."
+						}
+					],
+					"Key": 4360
+				},
+				{
+					"Name": "AudioSession_NotifyOthersOnDeactivation",
+					"DisplayName": "Audio Session: Notify Others on De-activation",
+					"Visibility": "Default",
+					"Type": "Boolean",
+					"Doc": "Dictates whether the operating system should notify other apps when the Wwise audio session is de-activated.\n\nCorresponds to AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation.",
+					"DefaultValue": true,
+					"Key": 4361
+				},
+				{
+					"Name": "AudioSession_SuspendWhenInactive",
+					"DisplayName": "Audio Session: Suspend When Inactive",
+					"Visibility": "Default",
+					"Type": "Boolean",
+					"Doc": "Dictates whether the Sound Engine should be automatically suspended when the app goes in the background. \n\nThis option only applies when using audio categories that allow playing audio in the background (PlayAndRecord or Playback).\n\nWhen true, Wwise automatically calls Suspend when the app becomes inactive (UIApplicationWillResignActiveNotification) and WakeupFromSuspend when the app becomes active (UIApplicationDidBecomeActiveNotification).\n\nWhen false, Wwise does not react to these notifications. Audio will keep playing when the app is in the background.",
+					"DefaultValue": false,
+					"Key": 4362
+				},
+				{
+					"Name": "AudioCallbacks",
+					"DisplayName": "Audio Callbacks",
+					"Visibility": "Hidden",
+					"Type": "Pointer",
+					"Doc": "Callbacks for interfacing with audio-related events. Must be a pointer to an AkAudioCallbacks instance.",
+					"DefaultValue": null,
+					"Key": 4363
+				}
+			]
+		}
+	]
+}

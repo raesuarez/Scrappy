@@ -1,0 +1,25 @@
+{
+	"Version": 1,
+	"Namespaces": [
+		{
+			"Name": "Emscripten",
+			"DisplayName": "Emscripten",
+			"Doc": "Runtime options specific to the Web platform.",
+			"ConditionalMacro": "AK_EMSCRIPTEN",
+			"KeyStart": 4352,
+			"NumOptions": 1,
+			"Visibility": "Default",
+			"Options": [
+				{
+					"Name": "AudioWorkletProcessorUrl",
+					"DisplayName": "Audio Worklet Processor Url",
+					"Visibility": "Default",
+					"Type": "String",
+					"Doc": "URL of the Audio Worklet processor script.",
+					"DefaultValue": "WwiseAudioWorklet.processor.js",
+					"Key": 4352
+				}
+			]
+		}
+	]
+}
