@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c3btp473dyxfr"]
+
+[ext_resource type="Script" uid="uid://drxlerr47ds51" path="res://clockwork_roach.gd" id="1_nr741"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_d7hg4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr741"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pahpd"]
+
+[node name="clockRoach" type="RigidBody2D" unique_id=1227808908 groups=["clockRoach"]]
+gravity_scale = 0.0
+script = ExtResource("1_nr741")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1729697958]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_d7hg4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1186892815]
+visible = false
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=2136417372]
+shape = SubResource("RectangleShape2D_nr741")
+
+[node name="attackArea" type="Area2D" parent="." unique_id=66383130]
+
+[node name="activate_attack_collider" type="CollisionShape2D" parent="attackArea" unique_id=2065493518]
+shape = SubResource("RectangleShape2D_pahpd")
