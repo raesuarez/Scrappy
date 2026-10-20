@@ -2,6 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c6ciksrxsrsk" path="res://player.tscn" id="1_f3sb7"]
 
+[sub_resource type="Gradient" id="Gradient_f3sb7"]
+offsets = PackedFloat32Array(0, 0.972)
+colors = PackedColorArray(1, 0.24524024, 0.18784621, 1, 0.27026612, 0.5939421, 0.99999994, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fj7yv"]
+gradient = SubResource("Gradient_f3sb7")
+width = 400
+height = 400
+fill_to = Vector2(1, 1)
+
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_f3sb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
@@ -14,12 +24,33 @@ gradient = SubResource("Gradient_tlwt5")
 width = 3700
 height = 20
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3sb7"]
+size = Vector2(3700, 20)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fj7yv"]
+
+[sub_resource type="Gradient" id="Gradient_fj7yv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tlwt5"]
+gradient = SubResource("Gradient_fj7yv")
+
 [node name="World" type="Node2D" unique_id=1810752750]
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=15876870]
+visibility_layer = 7
+z_index = 1
+position = Vector2(9426, 0)
+scale = Vector2(63.37247, 41.434486)
+texture = SubResource("GradientTexture2D_fj7yv")
+
 [node name="Player" parent="." unique_id=1273999233 instance=ExtResource("1_f3sb7")]
+visibility_layer = 7
+z_index = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=829333927]
-position = Vector2(0, 72)
+z_index = 1
+position = Vector2(3491, 260)
+scale = Vector2(3.5600011, 27.64)
 physics_material_override = SubResource("PhysicsMaterial_f3sb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1329759304]
@@ -29,3 +60,47 @@ shape = SubResource("RectangleShape2D_fj7yv")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1232513206]
 texture = SubResource("GradientTexture2D_aqk2v")
 offset = Vector2(0, 3)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1959654458]
+z_index = 1
+position = Vector2(17047, 335.99988)
+scale = Vector2(3.5600011, 27.64)
+physics_material_override = SubResource("PhysicsMaterial_f3sb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1184167191]
+position = Vector2(1.1234418, 3.0028994)
+shape = SubResource("RectangleShape2D_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=2025606124]
+texture = SubResource("GradientTexture2D_aqk2v")
+offset = Vector2(0, 3)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=600600216]
+position = Vector2(28564, 1040)
+physics_material_override = SubResource("PhysicsMaterial_fj7yv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3" unique_id=146354293]
+z_index = 1
+scale = Vector2(50, 50)
+polygon = PackedVector2Array(-100, 0, 0, -100, 100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=1561339859]
+position = Vector2(-61.99998, 448.99997)
+rotation = 0.79723513
+scale = Vector2(120.17494, -120.61111)
+texture = SubResource("GradientTexture2D_tlwt5")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=407487175]
+position = Vector2(28564, 1040)
+physics_material_override = SubResource("PhysicsMaterial_fj7yv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D4" unique_id=1644396977]
+z_index = 1
+scale = Vector2(50, 50)
+polygon = PackedVector2Array(-100, 0, 0, -100, 100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=2056982052]
+position = Vector2(-61.99998, 448.99997)
+rotation = 0.79723513
+scale = Vector2(120.17494, -120.61111)
+texture = SubResource("GradientTexture2D_tlwt5")
